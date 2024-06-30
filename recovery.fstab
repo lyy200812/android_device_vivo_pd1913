@@ -3,13 +3,11 @@
 /vendor                   ext4     /dev/block/platform/bootdevice/by-name/vendor        flags=display=vendor
 /data                     ext4     /dev/block/platform/bootdevice/by-name/userdata      flags=display=data
 /cache                    ext4     /dev/block/platform/bootdevice/by-name/cache         flags=display=cache
-/mnt/vendor/protect_f     ext4     /dev/block/platform/bootdevice/by-name/protect1      flags=display=protect_f
-/mnt/vendor/protect_s     ext4     /dev/block/platform/bootdevice/by-name/protect2      flags=display=protect_s
-/mnt/vendor/nvdata        ext4     /dev/block/platform/bootdevice/by-name/nvdata        flags=display=nvdata
-/mnt/vendor/nvcfg         ext4     /dev/block/platform/bootdevice/by-name/nvcfg         flags=display=nvcfg
-/mnt/vendor/persist       ext4     /dev/block/platform/bootdevice/by-name/persist       flags=display=persist
-auto                      auto     /devices/platform/externdevice*                      flags=display=auto
-auto                      vfat     /devices/platform/mt_usb*                            flags=display=auto
+/protect_f                ext4     /dev/block/platform/bootdevice/by-name/protect1      flags=display=protect_f
+/protect_s                ext4     /dev/block/platform/bootdevice/by-name/protect2      flags=display=protect_s
+/nvdata                   ext4     /dev/block/platform/bootdevice/by-name/nvdata        flags=display=nvdata
+/nvcfg                    ext4     /dev/block/platform/bootdevice/by-name/nvcfg         flags=display=nvcfg
+/persist                  ext4     /dev/block/platform/bootdevice/by-name/persist       flags=display=persist
 /persistent               emmc     /dev/block/platform/bootdevice/by-name/frp           flags=display=persistent
 /nvram                    emmc     /dev/block/platform/bootdevice/by-name/nvram         flags=display=nvram
 /proinfo                  emmc     /dev/block/platform/bootdevice/by-name/proinfo       flags=display=proinfo
@@ -37,3 +35,4 @@ auto                      vfat     /devices/platform/mt_usb*                    
 /dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo          flags=display=dtbo
 /otp                      emmc     /dev/block/platform/bootdevice/by-name/otp           flags=display=otp
 /vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta        flags=display=vbmeta
+/external_sd              vfat     /dev/block/mmcblk1p1    /dev/block/mmcblk1           flags=display="Micro SDCard";storage;wipeingui;removable
