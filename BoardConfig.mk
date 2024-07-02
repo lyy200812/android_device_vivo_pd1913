@@ -103,13 +103,11 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_DEFAULT_LANGUAGE := zh_CN
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-TW_CRYPTO_FS_TYPE := "ext4"
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
-TW_CRYPTO_MNT_POINT := "/data"
-TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,noauto_da_alloc,discard,errors=panic,inlinecrypt"
+TW_INCLUDE_CRYPTO_FBE := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
