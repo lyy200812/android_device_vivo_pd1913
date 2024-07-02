@@ -29,9 +29,21 @@ on property:recovery.fastboot_mode=1
     start vendor.boot-hal-1-0
     start health-hal-2-0
 
-on property:recovery.service=1
-    start vendor.keymaster-3-0-trustonic
+on property:hwservicemanager.ready=true
+    start vendor.keymaster-4-0-trustonic
     start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported
+    stop servicemanager
+    stop hwservicemanager
+    stop vendor.keymaster-4-0-trustonic
+    stop gatekeeper-1-0
+
+on property:ro.crypto.state=unencrypted
+    stop servicemanager
+    stop hwservicemanager
+    stop vendor.keymaster-4-0-trustonic
+    stop gatekeeper-1-0
 
 
 service wait_for_keymaster  /system/bin/wait_for_keymaster
