@@ -30,19 +30,19 @@ on property:recovery.fastboot_mode=1
     start health-hal-2-0
 
 on property:hwservicemanager.ready=true
-    start vendor.keymaster-4-0-trustonic
+    start vendor.keymaster-3-0-trustonic
     start gatekeeper-1-0
 
 on property:ro.crypto.state=unsupported
     stop servicemanager
     stop hwservicemanager
-    stop vendor.keymaster-4-0-trustonic
+    stop vendor.keymaster-3-0-trustonic
     stop gatekeeper-1-0
 
 on property:ro.crypto.state=unencrypted
     stop servicemanager
     stop hwservicemanager
-    stop vendor.keymaster-4-0-trustonic
+    stop vendor.keymaster-3-0-trustonic
     stop gatekeeper-1-0
 
 
