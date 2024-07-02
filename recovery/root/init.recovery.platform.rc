@@ -32,9 +32,7 @@ on property:recovery.fastboot_mode=1
 on property:recovery.service=1
     start vendor.keymaster-3-0-trustonic
     start gatekeeper-1-0
-    #wait_for_prop hwservicemanager.ready true
-    #exec_start wait_for_keymaster
-    start guardianangle
+
 
 service wait_for_keymaster  /system/bin/wait_for_keymaster
     disabled
@@ -78,10 +76,6 @@ service keystore /system/bin/keystore /data/misc/keystore
     writepid /dev/cpuset/foreground/tasks
     seclabel u:r:recovery:s0
 
-service guardianangle  /system/bin/guardianangle
-    disabled
-    user root
-    seclabel u:r:recovery:s0
 
 service vendor.boot-hal-1-0 /vendor/bin/hw/android.hardware.boot@1.0-service
     disabled
